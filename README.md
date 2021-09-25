@@ -7,6 +7,47 @@ Kelompok A-02:
 - [Syamil Difaul Haq Sukur](https://github.com/Syamil28): 05111940000196
 ---
 
+1.	Sebutkan webserver yang digunakan pada "ichimarumaru.tech"!
+
+Jawaban: 
+Webserver suatu website dapat ditemukan dengan beberapa cara, kali ini saya menggunakan wireshark untuk melihatnya. Untuk melihat webserver dari suatu website di wireshark, kita harus melihat HTTP STREAM website tersebut. pertama kita harus memfilter package website ichimarumaru.tech dulu dari package-package yang masuk ke wireshark dengan filter http.host == ichimarumaru.tech. 
+![](./images/Picture1.png)
+setelah packagenya terfilter, pilih salah satu package lalu buka http stream dengan cara klik kanan->follow->http stream. 
+![](./images/Picture2.png)
+akan muncul detail dari website tersebut. webserver dapat kita cek di bagian server yang dimana pada website ichimarumaru.tech, server yang digunakan adalah nginx/1.18.0 (ubuntu).
+
+
+2.	Temukan paket dari web-web yang menggunakan basic authentication method!
+
+Jawaban: 
+Untuk menemukan web-web dengan basic authentication pada file 1-5.pcap digunakan filter http.authbasic. Setelah filter diaktifkan akan keluar paket-paket dengan basic authentication
+![](./images/Picture3.png)
+
+
+3.	Ikuti perintah di basic.ichimarumaru.tech! Username dan password bisa didapatkan dari file .pcapng!
+
+Jawaban: 
+Username dan password dapat kita akses pada file 1-5.pcap dengan mencari package yang mengandung athentication. Maka seperti nomor 2, kita memfilter http.authbasic dan membuka package yang mengandung login credential.
+![](./images/Picture4.png)
+setelah masuk, diberikan sebuah pertanyaan yang harus dijawab dan di screenshot.
+![](./images/Picture5.png)
+
+
+4.	Temukan paket mysql yang mengandung perintah query select!
+
+Jawaban: 
+Untuk mencari query mysql digunakan filter mysql.query. akan muncul banyak query dari mysql, dan kali ini kita harus mencari query select. untuk memfilter query dibutuhkan filter matches lalu nama perintah querynya. jadi untuk menemukan yang kita cari, dibutuhkan filter mysql.query matches select.
+![](./images/Picture6.png)
+ 
+
+5.	Login ke portal.ichimarumaru.tech kemudian ikuti perintahnya! Username dan password bisa didapat dari query insert pada table users dari file .pcap!
+
+Jawaban: 
+sama seperti nomer 4, digunakan mysql.query matches insert. lalu akan muncul username dan passwordnya
+![](./images/Picture7.png)
+setelah masuk, diberikan sebuah pertanyaan yang harus dijawab dan di screenshot.
+![](./images/Picture8.png)
+
 6.  Cari username dan password ketika melakukan login ke FTP Server!
 
 Jawaban:
