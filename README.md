@@ -157,3 +157,53 @@ Buka file "secret.zip"
 Buka file "Wanted.pdf" dengan memasukkan password tadi.
 
 ![](./images/image20.png)
+
+11. Filter sehingga wireshark hanya mengambil paket yang berasal dari port 80! 
+
+Jawaban:
+
+Capture Filter: **src port 80**
+
+![](./images/image7.png)
+
+Pada filter masukkan comand **src port 80** untuk menampilkan paket yang berasal dari port 80!
+
+12. Filter sehingga wireshark hanya mengambil paket yang mengandung port 21!
+
+Jawaban:
+
+Capture Filter: **port 21**
+
+![](./images/image19.png)
+
+Pada filter masukkan comand **src port 21** untuk menampilkan paket yang mengandung port 21!
+
+13. Filter sehingga wireshark hanya menampilkan paket yang menuju port 443!
+
+Jawaban:
+
+Capture filter: **dst port 443**
+
+![](./images/image16.png)
+
+Pada filter masukkan comand **dst port 443** untuk menampilkan paket yang menuju port 21
+
+14. Filter sehingga wireshark hanya mengambil paket yang tujuannya ke kemenag.go.id!
+
+Jawaban:
+
+Capture filter: **dst host kemenag.go.id**
+
+![](./images/image10.png)
+
+Pada filter masukkan comand **dst port 443** untuk menampilkan paket yang menuju website kemenag.go.id.
+
+15. Filter sehingga wireshark hanya mengambil paket yang berasal dari ip kalian!
+
+Jawaban:
+
+Capture filter: **src host 192.168.46.185**
+
+![](./images/image14.png)
+
+Pada filter masukkan comand **src host ip(192.168.46.185)** untuk menampilkan paket yang berasal dari ip sendiri.
