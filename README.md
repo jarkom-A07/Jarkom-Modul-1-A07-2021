@@ -63,23 +63,17 @@ setelah masuk, diberikan sebuah pertanyaan yang harus dijawab dan di screenshot.
 
 6.  Cari username dan password ketika melakukan login ke FTP Server!
 
-Jawaban:
-
+Jawaban: Penyelesaian soal ini menggunakan display filter pada file pcap wireshark.
 Display filter: **ftp.request.command == USER \|\| ftp.request.command
-== PASS**
-
-username : secretuser
-
-password : aku.pengen.pw.aja
+== PASS**. Sehingga didapatkan:
+- username : secretuser
+- password : aku.pengen.pw.aja
 
 ![](./images/image11.png)
 
-7.  Ada 500 file zip yang disimpan ke FTP Server dengan nama 0.zip,
-    > 1.zip, 2.zip, \..., 499.zip. Simpan dan Buka file pdf tersebut.
-    > (Hint = nama pdf-nya \"Real.pdf\")
+7.  Ada 500 file zip yang disimpan ke FTP Server dengan nama 0.zip, 1.zip, 2.zip, \..., 499.zip. Simpan dan Buka file pdf tersebut. (Hint = nama pdf-nya \"Real.pdf\")
 
-Jawaban:
-
+Jawaban: Penyelesaian soal ini menggunakan display filter pada file pcap wireshark.
 Display filter: **ftp-data contains Real.pdf**
 
 ![](./images/image9.png)
@@ -95,19 +89,14 @@ Buka file "Real.pdf"
 
 8.  Cari paket yang menunjukan pengambilan file dari FTP tersebut!
 
-Jawaban:
-
+Jawaban: Penyelesaian soal ini menggunakan display filter pada file pcap wireshark.
 Display filter: **ftp.request.command == RETR**
 
 ![](./images/image6.png)
 
-9.  Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan
-    > beberapa file. Salah satunya adalah sebuah file berisi data
-    > rahasia dengan nama \"secret.zip\". Simpan dan buka file tersebut!
+9.  Dari paket-paket yang menuju FTP terdapat inidkasi penyimpanan beberapa file. Salah satunya adalah sebuah file berisi data rahasia dengan nama \"secret.zip\". Simpan dan buka file tersebut!
 
-Jawaban:
-
-Display filter: **ftp-data**
+Jawaban: Penyelesaian soal ini menggunakan display filter pada file pcap wireshark. Display filter: **ftp-data**
 
 ![](./images/image23.png)
 
@@ -120,14 +109,9 @@ Berhasil save, lalu buka file tersebut.
 
 ![](./images/image3.png)
 
-10. Selain itu terdapat \"history.txt\" yang kemungkinan berisi history
-    > bash server tersebut! Gunakan isi dari \"history.txt\" untuk
-    > menemukan password untuk membuka file rahasia yang ada di
-    > \"secret.zip\"!
+10. Selain itu terdapat \"history.txt\" yang kemungkinan berisi history bash server tersebut! Gunakan isi dari \"history.txt\" untuk menemukan password untuk membuka file rahasia yang ada di \"secret.zip\"!
 
-Jawaban:
-
-Dsiplat filter: **ftp-data**
+Jawaban: Penyelesaian soal ini menggunakan display filter pada file pcap wireshark. Dsiplay filter: **ftp-data**
 
 Find: **"history.txt"**
 
